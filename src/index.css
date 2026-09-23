@@ -1,0 +1,28 @@
+/* GLOBAL COLORS */
+:root {
+    --background: #292929;
+    --background-void: #191919;
+    --text: #f9f9f9;
+    --shadow: rgba(0, 0, 0, 0.75);
+}
+
+body {
+    margin: 0;
+    font-family: sans;
+    background-color: var(--background-void);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    margin: 6rem auto;
+    position: relative;
+}
+
+main {
+    margin: auto;
+    background-color: var(--background);
+    width: min(800px, 95vw);
+    box-shadow: 0 5px 5px 5px var(--shadow);
+}

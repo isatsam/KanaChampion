@@ -1,0 +1,36 @@
+.container {
+    width: 33%;
+    margin: auto;
+    text-align: center;
+}
+
+.kana-display {
+    font-size: 4rem;
+    margin: 1rem;
+}
+
+.answerContainer {
+    height: 1rem;
+    margin: 10px 0;
+}
+
+.kana-form {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#kanaInputField {
+    margin: auto;
+    width: 5rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px var(--text) solid;
+    color: var(--text);
+    text-align: center;
+}
+
+.kana-form label {
+    margin-top: 5px;
+    font-size: small;
+}

@@ -1,0 +1,41 @@
+.nav-wrapper {
+    position: sticky;
+    top: 0;
+    padding: 1.5vh 2vw;
+    background-color: var(--background);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 10px 15px var(--shadow);
+    max-height: 3rem;
+}
+
+.nav-wrapper div:first-child a,
+.nav-wrapper div:first-child a:hover,
+.nav-wrapper div:first-child a:visited {
+    font-weight: 500;
+}
+
+.nav-wrapper a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.nav-wrapper a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+nav {
+    list-style: none;
+    width: min(1000px, 95vw);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+nav > div {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 35px;
+}

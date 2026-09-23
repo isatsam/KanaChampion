@@ -1,0 +1,52 @@
+.tab-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    position: absolute;
+    top: calc(calc(10px + 2rem) * -1);
+    gap: 8px;
+}
+
+.tab-list-tab {
+    background-color: var(--background);
+    padding: 10px 35px;
+    border: 1px solid var(--text);
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    outline: none;
+}
+
+.tab-clicked-on {
+    z-index: 101;
+}
+
+.tab-list-tab:hover {
+    cursor: pointer;
+}
+
+.tab-selected {
+    position: relative;
+    z-index: 100;
+    padding: 25px;
+    border-top: 1px solid var(--text);
+}
+
+.settings-container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+.settings-title {
+    font-weight: bold;
+}
+
+.settings-options {
+    display: inline-flex;
+    flex-flow: row wrap;
+    margin: 0 2rem;
+    gap: 2rem;
+}
