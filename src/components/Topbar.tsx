@@ -9,6 +9,7 @@ export function Topbar() {
           <li>
             <NavLink to="/">Kana</NavLink>
           </li>
+          {/*
           <li>
             <NavLink to="/kanji">Kanji</NavLink>
           </li>
@@ -21,10 +22,15 @@ export function Topbar() {
           <li>
             <NavLink to="/mix">Megamix</NavLink>
           </li>
+          */}
+          <li>
+            <NavLink to="/progress">Progress</NavLink>
+          </li>
         </div>
         <div>
-          {/* To-Do Auth */}
+          {/* To-Do Back-end...
           <li>Log in</li>
+           */}
         </div>
       </nav>
     </div>

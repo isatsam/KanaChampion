@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { Trainer } from "./CommonTrainer.tsx";
 import "./Trainers.css";
 import "./KanaTrainer.css";
+import { useProgress } from "../ProgressContext.tsx"
 
 class SolutionArray {
   type: string;
@@ -88,7 +89,7 @@ const KATAKANA: SolutionArray = {
     { kana: "テ", romaji: "te" },
     { kana: "ト", romaji: "to" },
     { kana: "ナ", romaji: "na" },
-    { kana: "二", romaji: "ni" },
+    { kana: "ニ", romaji: "ni" },
     { kana: "ヌ", romaji: "nu" },
     { kana: "ネ", romaji: "ne" },
     { kana: "ノ", romaji: "no" },
@@ -99,7 +100,7 @@ const KATAKANA: SolutionArray = {
     { kana: "ホ", romaji: "ho" },
     { kana: "マ", romaji: "ma" },
     { kana: "ミ", romaji: "mi" },
-    { kana: "厶", romaji: "mu" },
+    { kana: "ム", romaji: "mu" },
     { kana: "メ", romaji: "me" },
     { kana: "モ", romaji: "mo" },
     { kana: "ラ", romaji: "ra" },
@@ -142,6 +143,9 @@ function KanaForm() {
   } = useContext(ArrayContext);
   const { currentSuccess, setSuccess, totalToSuccess, setTotalToSuccess } =
     useContext(SuccessContext);
+
+  // +1 to the daily streak
+  const progress = useProgress();
 
   const answer = currentArray.arr[currentIndex].romaji;
 
@@ -224,6 +228,7 @@ function KanaForm() {
         }
 
         if (kanaInput.trim() == answer || answerVisible) {
+          progress.update();
           getNextKana();
           setKanaInput("");
           setAnswerVisibility(false);
@@ -259,9 +264,11 @@ function KanaForm() {
         <br />
         {currentSuccess} out of {totalToSuccess}
         <br />
-        <span id="winAnnounced" style={{ display: "none" }}>
+        <span id="winAnnounced" style={{ display: "none", fontWeight: 600 }}>
           Got {currentArray.arr.length} correctly, congratulations!
         </span>
+        <br />
+        Your daily streak: {progress.returnStreakCounter()}. Let's go!
       </label>
     </form>
   );

@@ -8,6 +8,7 @@ import { KanjiApp } from "./components/KanjiTrainer.tsx";
 import { WordsKana } from "./components/WordsKana.tsx";
 import { WordsKanji } from "./components/WordsKanji.tsx";
 import { MegamixApp } from "./components/Megamix.tsx";
+import { ProgressView } from "./components/ProgressView.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/words-kana" element={<WordsKana />} />
             <Route path="/words-kanji" element={<WordsKanji />} />
             <Route path="/mix" element={<MegamixApp />} />
+            <Route path="/progress" element={<ProgressView />} />
           </Routes>
         </main>
       </div>

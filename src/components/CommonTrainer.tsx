@@ -7,6 +7,7 @@ interface Props {
   settings: ReactNode;
 }
 
+
 export function Trainer({ exercise, settings }: Props) {
   return (
     <Tabs selectedTabClassName="tab-clicked-on">
